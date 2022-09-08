@@ -5,16 +5,12 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+//not implemented yet
 @Entity
 @Getter
 @Setter
-public class Vehicle {
-
+public class Transaction {
     @Id
     private long id;
-    private String make;
-    private String model;
-    private String fuelType;
-    private int prodYear;
-    private double price;
+    private TransactionType transactionType;
 }

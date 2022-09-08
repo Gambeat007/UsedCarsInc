@@ -11,10 +11,13 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class CustomerService {
-
     private final CustomerRepository customerRepository;
 
-    public List<Customer> getCustomers() {
-        return  customerRepository.findAllCustomers();
+    public List<Customer> findAllCustomers() {
+        return customerRepository.findAllCustomers();
+    }
+
+    public List<Customer> findCustomerByName(String name) {
+        return customerRepository.findCustomerByName(name);
     }
 }

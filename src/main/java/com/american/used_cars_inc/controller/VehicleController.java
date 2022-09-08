@@ -16,13 +16,18 @@ public class VehicleController {
     private final VehicleService vehicleService;
 
     @GetMapping("/vehicles")
-    public List<Vehicle> getVehicles() {
-        return vehicleService.getVehicles();
+    public List<Vehicle> findAllVehicles() {
+        return vehicleService.findAllVehicles();
     }
 
     @GetMapping("/vehicles/{id}")
-    public Vehicle getSingleVehicle(@PathVariable long id) {
-       return vehicleService.getSingleVehicle(id);
+    public Vehicle findVehicleById(@PathVariable long id) {
+       return vehicleService.findVehicleById(id);
+    }
+
+    @GetMapping("/prices/{price}")
+    public List<Vehicle> findVehicleCheaperThan(@PathVariable double price) {
+        return vehicleService.findVehicleCheaperThan(price);
     }
 
 }

@@ -10,16 +10,17 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class VehicleService {
-
     private final VehicleRepository vehicleRepository;
 
-    public List<Vehicle> getVehicles() {
-        return vehicleRepository.findAll();
+    public List<Vehicle> findAllVehicles() {
+        return vehicleRepository.findAllVehicles();
     }
 
+    public Vehicle findVehicleById(long id) {
+        return vehicleRepository.findVehicleById(id);
+    }
 
-    public Vehicle getSingleVehicle(long id) {
-        return vehicleRepository.findById(id)
-                .orElseThrow();
+    public List<Vehicle> findVehicleCheaperThan(double price) {
+        return vehicleRepository.findVehicleCheaperThan(price);
     }
 }
